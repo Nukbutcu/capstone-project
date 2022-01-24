@@ -5,5 +5,10 @@ readFile("hello.json", "utf8", (err, data) => {
     console.error(err);
     return;
   }
-  console.log(JSON.parse(data));
+  try {
+    let parse = JSON.parse(data);
+    console.log(parse);
+  } catch {
+    console.log(data);
+  }
 });
